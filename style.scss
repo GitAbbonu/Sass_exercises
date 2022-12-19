@@ -1,0 +1,30 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+$border1: 1px solid;
+
+div {
+  border: $border1 $color-primary;
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: $color-tertiary;
+    text-decoration: underline;
+    text-decoration-color: $color-secondary;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding: 1%;
+    color: $color-secondary;
+
+    article {
+      border: $border1 $color-tertiary;
+      padding: 7%;
+      text-align: center;
+      &:nth-child(2n) {
+        color: $color-primary;
+      }
+    }
+  }
+}
