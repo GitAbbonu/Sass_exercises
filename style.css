@@ -1,7 +1,7 @@
-div {
+.cont {
   border: 1px solid red;
 }
-div h1 {
+.cont h1 {
   text-align: center;
   margin-top: 30px;
   color: green;
@@ -9,17 +9,29 @@ div h1 {
   -webkit-text-decoration-color: blue;
           text-decoration-color: blue;
 }
-div section {
+.cont section:first-of-type {
   display: grid;
   grid-template-columns: repeat(4, auto);
   padding: 1%;
   color: blue;
 }
-div section article {
+.cont section:first-of-type article {
+  color: blue;
   border: 1px solid green;
+  font-size: 1rem;
   padding: 7%;
   text-align: center;
 }
-div section article:nth-child(2n) {
+.cont section:first-of-type article:nth-child(2n) {
   color: red;
+}
+.cont section:last-of-type {
+  padding: 1%;
+}
+.cont section:last-of-type article {
+  color: green;
+  border: 1px solid blue;
+  font-size: 24px;
+  padding: 2%;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

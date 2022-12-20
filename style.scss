@@ -1,10 +1,17 @@
 $color-primary: red;
 $color-secondary: blue;
 $color-tertiary: green;
-$border1: 1px solid;
 
-div {
-  border: $border1 $color-primary;
+@mixin article-card($color, $border-color, $font-size: 1rem, $padding: 7%) {
+  color: $color;
+  border: 1px solid $border-color;
+  font-size: $font-size;
+  padding: $padding;
+  text-align: center;
+}
+
+.cont {
+  border: 1px solid $color-primary;
   h1 {
     text-align: center;
     margin-top: 30px;
@@ -12,19 +19,22 @@ div {
     text-decoration: underline;
     text-decoration-color: $color-secondary;
   }
-  section {
+  section:first-of-type {
     display: grid;
     grid-template-columns: repeat(4, auto);
     padding: 1%;
     color: $color-secondary;
-
     article {
-      border: $border1 $color-tertiary;
-      padding: 7%;
-      text-align: center;
+      @include article-card($color-secondary, $color-tertiary);
       &:nth-child(2n) {
         color: $color-primary;
       }
+    }
+  }
+  section:last-of-type {
+    padding: 1%;
+    article {
+      @include article-card($color-tertiary, $color-secondary, 24px, 2%);
     }
   }
 }
