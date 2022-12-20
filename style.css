@@ -1,0 +1,37 @@
+.cont {
+  border: 0.0625rem solid red;
+}
+.cont h1 {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: green;
+  text-decoration: underline;
+  -webkit-text-decoration-color: blue;
+          text-decoration-color: blue;
+}
+.cont section:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  padding: 1%;
+  color: blue;
+}
+.cont section:first-of-type article {
+  color: blue;
+  border: 0.0625rem solid green;
+  font-size: 1rem;
+  padding: 7%;
+  text-align: center;
+}
+.cont section:first-of-type article:nth-child(2n) {
+  color: red;
+}
+.cont section:last-of-type {
+  padding: 1%;
+}
+.cont section:last-of-type article {
+  color: green;
+  border: 0.0625rem solid blue;
+  font-size: 24px;
+  padding: 2%;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
