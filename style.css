@@ -1,13 +1,23 @@
-.cont {
-  border: 0.0625rem solid red;
-}
-.cont h1 {
+.cont .h2, .cont h1 {
   text-align: center;
   margin-top: 1.5rem;
   color: green;
   text-decoration: underline;
   -webkit-text-decoration-color: blue;
           text-decoration-color: blue;
+}
+
+.cont {
+  border: 0.0625rem solid red;
+}
+.cont div {
+  display: flex;
+  justify-content: center;
+}
+.cont .h2-class {
+  padding: 1rem;
+  text-decoration: none;
+  border: 0.0625rem solid red;
 }
 .cont section:first-of-type {
   display: grid;
