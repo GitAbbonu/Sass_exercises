@@ -1,5 +1,6 @@
 @use "colors" as c;
 @use "function" as f;
+@use "sass:color";
 
 @mixin article-card($color, $border-color, $font-size: 1rem, $padding: 7%) {
   color: $color;
@@ -54,5 +55,52 @@
     article {
       @include article-card(c.$color-tertiary, c.$color-secondary, 24px, 2%);
     }
+  }
+}
+
+.squares {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  justify-content: space-between;
+
+  $sizes: 1rem, 2rem, 3rem;
+  @each $size in $sizes {
+    .fs-#{$size} {
+      @if $size == 1rem {
+        justify-content: flex-start;
+      } @else {
+        @if $size == 2rem {
+          justify-content: flex-start;
+          align-items: baseline;
+        } @else {
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+      }
+      font-size: $size;
+    }
+  }
+
+  @for $i from 1 through 19 {
+    @if $i == 10 {
+      div:nth-child(#{$i}) {
+        background-color: c.$color-secondary;
+        color: c.$color-primary;
+      }
+    } @else {
+      div:nth-child(#{$i}) {
+        // background-color: darken(rgb(230, 230, 230), $i + 5%);
+        // background: rgba(black, calc(0.05 * $i));
+        background: invert(white, calc(5% * $i));
+        color: invert(black, calc(5% * $i));
+      }
+    }
+  }
+
+  div {
+    height: 60px;
+    width: 60px;
+    border: 1px solid red;
   }
 }
